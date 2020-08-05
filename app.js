@@ -16,7 +16,7 @@ document.querySelector("#todoInsertForm").addEventListener("submit", () => {
     if (document.querySelector(".alert.alert-danger") !== null) return;
     let alert = fnCreateAlert("danger", "Boş todo əlavə edilə bilməz.");
     document.querySelector("#listDiv").prepend(alert);
-    setInterval(() => {
+    setTimeout(() => {
       alert.remove();
     }, 1000);
     return;
@@ -26,7 +26,7 @@ document.querySelector("#todoInsertForm").addEventListener("submit", () => {
     `<strong> ${value} </strong> - əlavə edilidi.`
   );
   document.querySelector("#listDiv").prepend(alert);
-  setInterval(() => {
+  setTimeout(() => {
     alert.remove();
   }, 1000);
   ulList.prepend(fnCreateNewTodo(value));
@@ -66,7 +66,7 @@ function fnCreateNewTodo(todo) {
       `<strong> ${todo} </strong> - siyahıdan silindi.`
     );
     document.querySelector("#listDiv").prepend(alert);
-    setInterval(() => {
+    setTimeout(() => {
       alert.remove();
     }, 1000);
     li.remove();
